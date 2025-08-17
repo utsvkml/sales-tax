@@ -54,6 +54,8 @@ public class OrderService {
 
         }).toList();
 
+        saveOrder(orders);
+
         return OrderResponse.builder()
                             .userName(orders.getUserName())
                             .order(items)
