@@ -18,11 +18,11 @@ public class ItemService {
 
     private final ItemRepo itemRepo;
 
-    public ItemDetails addItem(ItemDetails itemDetails) {
+    public List<ItemDetails> addItem(List<ItemDetails> itemDetails) {
 
-        Items item = ItemsUtils.toEntity(itemDetails);
-        Items items = itemRepo.save(item);
-        return ItemsUtils.toDto(items);
+        List<Items> item = itemDetails.stream().map(data->ItemsUtils.toEntity(data)).toList();
+        List<Items> items = itemRepo.saveAll(item);
+        return items.stream().map(data-> ItemsUtils.toDto(data)).toList();
 
     }
 
