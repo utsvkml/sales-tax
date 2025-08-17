@@ -84,7 +84,7 @@ public class OrderService {
 
                orderDetails.setItemName(items1.getItem_name());
                orderDetails.setTotal(total);
-               orderDetails.setQuantity(items1.getQuantity());
+               orderDetails.setQuantity(quantity);
                orderDetails.setTotalTax(paidTax);
               
                totalTax+= paidTax;
