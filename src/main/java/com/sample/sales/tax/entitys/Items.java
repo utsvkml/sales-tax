@@ -32,4 +32,6 @@ public class Items {
     private Category category;
     private Double item_price;
 
+    private Integer quantity;
+
 }

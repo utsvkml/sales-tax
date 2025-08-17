@@ -1,23 +1,18 @@
 package com.sample.sales.tax.dto;
 
-import com.sample.sales.tax.enums.Category;
-
+import jakarta.persistence.Embeddable;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-
 @Data
-@NoArgsConstructor
 @AllArgsConstructor
+@NoArgsConstructor
 @Builder
-public class ItemDetails {
+@Embeddable
+public class OrderItemInfo {
     
-    private Long id;
-    private String item_name;
-    private Category category;
-    private Double item_price;
+    private Long itemId;
     private Integer quantity;
-
 }
